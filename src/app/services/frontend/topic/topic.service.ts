@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 
 import { Router } from '@angular/router';
 import { AuthFrontEnd } from '../../../models/frontend/AuthFrontEnd';
-import { RegistrationFrontEnd } from '../../../models/frontend/RegistrationFrontEnd';
 import * as globalVar from '../../../app-global'; 
 import { showNotif } from '../../../../assets/js/loader.js';
 import { catchError } from 'rxjs/operators';
