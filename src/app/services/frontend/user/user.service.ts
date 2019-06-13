@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthFrontEnd } from '../../../models/frontend/AuthFrontEnd';
-import { RegistrationFrontEnd } from '../../../models/frontend/RegistrationFrontEnd';
+import { RegistrationFrontEnd } from '../../../models/frontend/RegistrationFront';
 import * as globalVar from '../../../app-global'; 
 
 const httpOptions = {  
