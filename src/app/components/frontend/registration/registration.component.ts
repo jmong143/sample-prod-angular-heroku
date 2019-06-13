@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output, ViewChild } from '@angular/cor
 import * as globalVar from '../../../app-global'; 
 import { Router } from '@angular/router';
 import { UserService } from '../../../services/frontend/user/user.service';
-import { RegistrationFrontEnd } from '../../../models/frontend/RegistrationFrontEnd';
+import { RegistrationFrontEnd } from '../../../models/frontend/RegistrationFrontend';
 import { AuthFrontEnd } from '../../../models/frontend/AuthFrontEnd';
 import { showNotif } from '../../../../../src/assets/js/loader.js';
 
