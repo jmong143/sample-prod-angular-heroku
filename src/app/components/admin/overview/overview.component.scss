@@ -1,0 +1,49 @@
+@import 'bulma';
+
+.overview {
+    padding: 10px;
+    .has-background-danger {
+        background-color: #ff5b57 !important;
+    }
+    .card-content {
+        color: #fff;
+        background-position: right;
+        position: relative;
+        overflow: hidden;
+        .overview-card-title {
+            opacity: .70;
+        }
+        .overview-total {
+            font-weight: bolder;
+            font-size: 30px;
+        }
+        .fa-icons {
+            font-size: 60px;
+            opacity: .50;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+    }
+
+    footer {
+        background-color: rgba(0, 0, 0, 0.23);
+        text-align: right;
+        a {
+            justify-content: right; 
+            color: #fff;
+        }
+
+        a:hover {
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+    }
+    .subject-graph {
+        canvas {
+            height: 350px !important;
+            width: auto !important;
+            margin: auto;
+        }
+    }
+    
+}

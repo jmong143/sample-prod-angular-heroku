@@ -1,0 +1,78 @@
+@import '../../../../styles.scss';
+
+.main-content-component{
+    padding: 15px;
+    
+   
+}
+
+.modal-content, .modal-card {
+    // width: 1270px !important;
+}
+
+.message.is-primary .message-header {
+    background-color: $primary !important;
+}
+
+.verticalLine {
+    border-left: thick solid #ff0000;
+ }
+
+ .message-header {
+    border-radius: 12px 12px 0 0;
+ }
+
+ .message.is-primary .message-body {
+    background-color: #fff;
+}  
+
+//from modal
+.heading-text{
+    font-size: 14px !important;
+}
+
+.menu-list a.is-active {
+    // background-color: #FFF;
+    color: #FFF;
+    text-decoration: none;
+}
+.menu-list a {
+    text-decoration: none;
+}
+
+.tab-is-active{
+    background-color: #2d68e4;
+}
+.custom-button-secondary{
+    background-color: #ffc000;
+    color: #fff;
+    padding: 20px 31px;
+    line-height: 0.2;
+  }
+
+.content-hide{
+    visibility: hidden;
+}
+
+.message {
+    border-radius: 15px;
+}
+
+.is-center{
+    text-align:center;
+}
+
+.add-ons-button{
+    background-color: #ffc000;
+    color: #fff;
+}
+
+
+.custom-notif{
+    border-style: ridge;
+    background-color: #FFF;
+}
+
+.see-more{
+    text-decoration: none !important;
+}

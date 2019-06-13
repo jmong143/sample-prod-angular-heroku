@@ -1,0 +1,48 @@
+.navbar-custom-color{
+  background-color: red !important;
+}
+.custom-navbar{
+font-size: 12px;
+box-shadow: 0 5px #ffc000;
+padding-top: 0vh;
+}
+.link-is-active{
+  background-color: #00d2ff;
+}
+
+
+.custom-navbar-logo{
+margin-bottom: -8px;
+}
+
+.navbar.is-primary {
+background-color: #003469 !important;
+}
+
+.custom-item{
+margin-top: 7vh;
+border-radius: 1vh 1vh 0 0;
+}
+
+.custom-is-active {
+background-color:  #ffc000
+}
+
+
+.navbar-end a.navbar-item:hover {
+background-color: #c7a028 !important;
+}
+
+.navbar-brand a.custom-navbar:hover{
+background-color: #003469 !important;
+}
+
+
+
+.default-navbar-item{
+color: #373a3c;
+display: block;
+line-height: 1.5;
+padding: 0.5rem 0.75rem;
+position: relative;
+}

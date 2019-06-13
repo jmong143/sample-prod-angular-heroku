@@ -1,0 +1,50 @@
+@import '../../../../../styles.scss';
+.home-news-component{
+    .tab{
+        .tab-recent-activity{
+            text-decoration: none !important;
+        }
+    }
+    .custom-content-body {
+        padding: 0 0 !important;
+        overflow: scroll;
+        height: 27rem;
+    }
+    .is-active{
+        color: #2d68e4;
+    }
+    
+    .tab-custom-content{
+    //    padding: 0rem 1.5rem;
+        padding: 0rem 0rem 8rem 1rem;
+    }
+
+    .custom-scroll{
+        overflow: hidden;
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: 0;
+        top: 0;
+    }
+    .tab-name{
+        font-size: 11px;
+    }
+    .news-line{
+        background-color: #827e7e;
+    }
+}
+
+
+
+.message.is-primary .message-header {
+    background-color: $primary !important;
+}
+ .message.is-primary .message-body {
+    background-color: #fff;
+}
+.message-header {
+    border-radius: 12px 12px 0 0;
+}
+ 
+
+ 

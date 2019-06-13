@@ -1,0 +1,124 @@
+<div class="overview">
+  <div class="tile is-ancestor">
+    <div class="tile is-3 is-vertical is-parent">
+      <div class="card has-background-danger">
+        <div class="card-content">
+          <span class="overview-card-title">TOTAL USERS</span>
+          <br>
+          <span class="overview-total">
+            {{ totalUsers ? totalUsers : 0 }}
+          </span>
+          <div class="fa-icons">
+            <i class="fas fa-users"></i>
+          </div>
+        </div>
+        <footer class="card-footer user view-detail">
+          <a routerLink="/admin-control/user" class="card-footer-item">
+            View Details&nbsp;<i class="fas fa-chevron-circle-right"></i>
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <div class="tile is-3 is-vertical is-parent">
+      <div class="card has-background-info">
+        <div class="card-content">
+          <span class="overview-card-title">TOTAL SUBJECTS</span>
+          <br>
+          <span class="overview-total">
+            {{ totalSubject ? totalSubject : 0 }}
+          </span>
+          <div class="fa-icons">
+            <i class="fas fa-book"></i>
+          </div>
+        </div>
+        <footer class="card-footer user view-detail">
+          <a class="card-footer-item">
+            View Details&nbsp;<i class="fas fa-chevron-circle-right"></i>
+          </a>
+        </footer>
+      </div>
+    </div>
+    
+    <div class="tile is-3 is-vertical is-parent">
+      <div class="card has-background-success">
+        <div class="card-content">
+          <span class="overview-card-title">PASSING RATE</span>
+          <br>
+          <span class="overview-total">
+            78%
+          </span>
+          <div class="fa-icons">
+            <i class="fas fa-percentage"></i>
+          </div>
+        </div>
+        <footer class="card-footer user view-detail">
+          <a class="card-footer-item">
+            View Details&nbsp;<i class="fas fa-chevron-circle-right"></i>
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <div class="tile is-3 is-vertical is-parent">
+      <div class="card has-background-warning">
+        <div class="card-content">
+          <span class="overview-card-title">PASSING RATE</span>
+          <br>
+          <span class="overview-total">
+            78%
+          </span>
+          <div class="fa-icons">
+            <i class="fas fa-percentage"></i>
+          </div>
+        </div>
+        <footer class="card-footer user view-detail">
+          <a class="card-footer-item">
+            View Details&nbsp;<i class="fas fa-chevron-circle-right"></i>
+          </a>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+    
+  
+  <div class="tile is-ancestor">
+
+    <div class="tile is-parent">
+      <div class="tile is-child box">
+        <h4 class="title is-4">Most enrolled subjects</h4>
+        <div class="subject-graph">
+          <canvas id="lineChart"></canvas>
+        </div>
+        <a class="button reload-chart" (click)="reloadChart()" >Reload Chart</a>
+      </div>
+    </div>
+
+    
+
+    <div class="tile is-4 is-vertical is-parent">
+      <div class="tile is-child box">
+        <h4 class="title is-4">Most recent users</h4>
+        <div class="timeline">
+          <header class="timeline-header">
+            <span class="tag is-medium is-primary">Recent</span>
+          </header>
+          <div *ngFor="let user of users; let i=index;">
+            <div class="timeline-item" *ngIf="i<5">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <p class="heading">{{ user.firstName }} {{ user.lastName }}</p>
+                <p>Added at: {{ user.createdAt | date : "fullDate"  }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-header">
+            <span class="tag is-medium is-primary">Older</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

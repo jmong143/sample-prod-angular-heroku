@@ -1,0 +1,47 @@
+<div class="content-modal">
+  <div class="modal" [class.is-active]="!dismissed && data">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Daily Tips</p>
+        <button class="delete" (click)="modalCloseBtn()"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="notification is-success" *ngIf="msg"><i class="fas fa-check-circle"></i> {{msg}}</div>
+        <table>
+          <thead>
+            <tr *ngFor="let tip of b; let i=index">
+              <td *ngIf="tip.isArchive == false">
+                <div class="field is-grouped">
+                  <p class="control is-expanded tooltip is-tooltip-multiline" [class.is-tooltip-bottom]="i <= a" [attr.data-tooltip]="tip.tip">
+                    <input class="input" type="text" name="description" placeholder="Update topic description" [disabled]="i != x" [(ngModel)]="tip.tip">
+                  </p>
+                  <p class="control" *ngIf="i != x">
+                    <a class="button" data-tooltip="Tooltip Text" (click)="editTip(i)" >
+                      <i class="fas fa-edit"></i>
+                    </a>
+                    <a class="button" (click)="deleteTip(tip.id)">
+                      <i class="far fa-trash-alt"></i>
+                    </a>
+                  </p>
+                  <p class="control" *ngIf="i == x">
+                    <a class="button" (click)="updateTip(tip.tip, tip.id)">
+                      <i class="fas fa-save"></i>
+                    </a>
+                    <a class="button" (click)="closeEdit()">
+                      <i class="fas fa-window-close"></i>
+                    </a>
+                  </p>
+                </div>
+              </td>
+            </tr>
+          </thead>
+        </table>
+      </section>
+      <footer class="modal-card-foot">
+        <button (click)="addDailyTip()" class="button is-success">Add</button>
+        <input type="text" class="input" [(ngModel)]="newTip.tip" placeholder="Add new daily tip">
+      </footer>
+    </div>
+  </div>
+</div>

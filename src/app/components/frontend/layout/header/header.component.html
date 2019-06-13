@@ -1,0 +1,166 @@
+<div #preLoader>
+  <app-page-loader></app-page-loader>
+</div>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand ">
+    <a class="navbar-item custom-navbar" routerLink = "/">
+      <img class = "custom-navbar-logo" src = "../../../../../assets/img/brand.png">
+    </a>
+    <a (click)="toggleNavbar()" role="button" #navBurger class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarFront">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarFront" class="navbar-menu custom-navbar" #navMenu>
+    <div class="navbar-start">
+      <!-- <a class="navbar-item"> Home </a> -->
+    </div>
+    <div class="navbar-end">
+        <!-- <a class="navbar-item custom-item" (click) = "navLinkClick('home')" [ngClass]="checkIsActive('home')"><span class = "fa fa-home"></span> &nbsp; HOME </a> -->
+        <!-- <a class="navbar-item custom-item" [routerLink]="['/']" [routerLinkActive]="'is-active'"><span class = "fa fa-home"></span> &nbsp; HOME </a> -->
+        
+        <!-- <a class="navbar-item custom-item" [class.active]="isActive(['Home'])"><span class = "fa fa-home"></span> &nbsp; HOME </a> -->
+        <!-- <a class="navbar-item custom-item" (click) = "navLinkClick('subject')" [ngClass]="checkIsActive('subject')"><span class = "fa fa-file-invoice"></span> &nbsp; MY SUBJECTS </a> -->
+        <a class="navbar-item custom-item" [routerLink]="['/']" #headerHome><span class = "fa fa-home"></span> &nbsp; HOME </a>
+        <a class="navbar-item custom-item" [routerLink]="['/subjects']"><span class = "fa fa-file-invoice"></span> &nbsp; MY SUBJECTS </a>
+        <a class="navbar-item custom-item" (click) = "navLinkClick('notif')" [ngClass]="checkIsActive('notif')"><span class = "fa fa-bell"></span> &nbsp; NOTIFICATION </a>
+        <a class="navbar-item custom-item" (click)="launchModal('open')"><span class = "fa fa-user-circle"></span> &nbsp; PROFILE </a>
+      </div>
+  </div>
+</nav>
+
+
+<div class="modal" #sampleModal>
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <article class="message is-primary">
+        <div class="message-header">
+          <p>Profile</p>
+          <button class="delete" (click)="launchModal('close')"></button>
+        </div>
+        <div class="message-body">
+            <div class="columns">
+                <div class="column is-3">
+                  <div class="bd-notification is-primary">
+                      <aside class="menu">
+                          <ul class="menu-list">
+                              <li>
+                                  <a class = "is-active" (click)="tabUserClick('profile-details')" #linkTabUserProfile> PROFILE DETAILS</a>
+                                </li>
+                                <li>
+                                    <a class = "" (click)="tabUserClick('security')" #linkTabSecurity> SECURITY</a>
+                                </li>
+    
+                                <li>
+                                    <a class = "" (click)="tabUserClick('subscription')" #linkTabSubscription> SUBSCRIPTIONS</a>
+                                </li>
+                          </ul>
+                          
+                        </aside>
+                  </div>
+                </div>
+                
+                  <div class = "column tab-profile-details" #tabProfileDetails>
+                      <strong><b class = "heading-text">BASIC INFORMATION</b></strong>
+                      <hr/>
+                      <div class="columns">
+                        <div class="column">
+                          <label><b>First Name</b></label>
+                          <input type = "text" class = "input is-primary" value = "{{userInfo ? userInfo.user.firstName : ''}}"/>
+                        </div>
+                      </div>
+                      <div class="columns">
+                        <div class="column">
+                          <label><b>Last Name</b></label>
+                          <input type = "text" class = "input is-primary" value = "{{userInfo ? userInfo.user.lastName : ''}}"/> 
+                        </div>
+                      </div>
+                      <div class="columns">
+                        <div class="column">
+                          <label><b>Email Address</b></label>
+                          <input type = "text" class = "input is-primary" value = "{{userInfo ? userInfo.user.email : ''}}"/>
+                        </div>
+                      </div>
+                      <div class="columns">
+                        <div class="column">
+                          <label><b>Birthdate</b></label>
+                          <input type = "date" class = "input is-primary" value = "{{userInfo ? userInfo.user.birthdate : ''}}"/>
+                        </div>
+                      </div>
+                      <div class="columns">
+                        <div class="column">
+                          <label><b>School Attended</b></label>
+                          <input type = "text" class = "input is-primary"/>
+                        </div>
+                      </div>
+                      <div class = "level-right">
+                        <button class = "button is-rounded custom-button-secondary">Update</button>
+                      </div>
+                  </div>
+
+                <div class = " column tab-security is-hidden" #tabSecurity>
+                    <strong><b class = "heading-text">UPDATE SECURITY</b></strong>
+                    <hr/>
+                    <div class="columns">
+                      <div class="column">
+                        <label><b>Current Password</b></label>
+                        <input type = "text" class = "input is-primary"/>
+                      </div>
+                    </div>
+                    <div class="columns">
+                      <div class="column">
+                        <label><b>New Password</b></label>
+                        <input type = "text" class = "input is-primary"/>
+                      </div>
+                    </div>
+                    <div class="columns">
+                      <div class="column">
+                        <label><b>Retype New Password</b></label>
+                        <input type = "text" class = "input is-primary"/>
+                      </div>
+                    </div>
+                    <div class = "level-right">
+                      <button class = "button is-rounded custom-button-secondary">Update</button>
+                    </div>
+                  </div>
+                
+                <div class = "column tab-subscription is-hidden" #tabSubscription>
+                    <strong><b class = "heading-text">ENROLLED SUBJECTS</b></strong>
+                    <hr/>
+                    <table class="table is-bordered is-striped is-narrow">
+                      <thead>
+                        <tr>
+                          <th> Code </th>
+                          <th> Name </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> CS111 </td>
+                          <td> Introduction to computer </td>
+                        </tr>
+                        <tr>
+                          <td> ENG212 </td>
+                          <td> Literature </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br/>
+                    <strong><b class = "heading-text">ACTIVATE SUBJECT</b></strong><hr/>
+                    <div class="field has-addons">
+                      <p class="control">
+                        <input class="input" type="text" placeholder="Enter Code">
+                      </p>
+                      <p class="control">
+                        <button class="button add-ons-button">Activate</button>
+                      </p>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>

@@ -1,0 +1,84 @@
+<div class="daily box">
+  <h5><i class="far fa-lightbulb"></i> {{ dailyTips }}</h5>
+  <a (click)="viewAllTips()" class="view-all">View all tips <i class="fas fa-angle-double-right"></i></a>
+</div>
+
+<admin-daily-tip-modal></admin-daily-tip-modal>
+
+<div class="news box">
+  <div class="columns">
+    <div class="column is-three-fifths" *ngIf="!data">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Title: </label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input [(ngModel)]="title" class="input" type="text" placeholder="Enter news title">
+            </div>
+          </div>
+        </div>
+      </div>
+      <ckeditor [editor]="Editor" data="" (change)="onChange($event)"></ckeditor>
+      <div class="news-button">
+        <a class="button" (click)="submitNews($event)">Submit</a>
+        <a class="button" (click)="submitCkeditor($event)">Preview</a>
+      </div>
+      <div class="news-preview" *ngIf="preview">
+        <div class="preview-content" [innerHtml]="preview">
+
+        </div>
+        <button class="button is-danger" (click)="closePreview()">Close</button>
+      </div>
+    </div>
+
+    <div class="column is-three-fifths" *ngIf="data">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Title: </label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input [(ngModel)]="title" class="input" type="text" placeholder="Enter news title">
+            </div>
+          </div>
+        </div>
+      </div>
+      <ckeditor [editor]="Editor" [(ngModel)]="data" data="" (change)="onChange($event)"></ckeditor>
+      <div class="news-button">
+        <a class="button" *ngIf="!data" (click)="submitNews($event)">Submit</a>
+        <a class="button" *ngIf="data" (click)="updateNews(news.id)">Update</a>
+        <a class="button" *ngIf="data" (click)="cancelEditNews($event)">Cancel</a>
+        <a class="button" (click)="submitCkeditor($event)">Preview</a>
+      </div>
+      <div class="news-preview" *ngIf="preview">
+        <div class="preview-content" [innerHtml]="preview">
+
+        </div>
+        <button class="button" (click)="closePreview()">Close</button>
+      </div>
+    </div>
+    <div class="column">
+      <h5 class="title-newsfeed">Newsfeed</h5>
+      <div class="news-list-column">
+          <table class="table" *ngIf="isRefreshed">
+
+              <thead>
+                <tr *ngFor="let news of newsList; let i=index" class="news-list-row" [class.is-active]="x == i && isActive">
+                  <td *ngIf="news.isArchive == false">
+                    <a routerLink="{{ news.id }}" (click)="newsId(news.id)"><span class="news-list">{{ news.title }}</span></a>
+                    <br> {{ news.createdAt | date : "fullDate" }}
+                    <div class="manage-news-option">
+                      <button class="button" (click)="editNews(news.id, i)"><i class="fas fa-edit"></i></button>
+                      <button class="button" (click)="archiveNews(news.id)"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                  </td>
+                </tr>
+              </thead>
+            </table>
+      </div>
+    </div>
+  </div>
+</div>

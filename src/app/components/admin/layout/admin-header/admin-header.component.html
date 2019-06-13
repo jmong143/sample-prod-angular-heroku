@@ -1,0 +1,87 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/assets/img/logo.png">
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div class="navbar-menu">
+      <div class="navbar-end">
+          <div class="navbar-item has-dropdown navbar-end" [class.is-active]="isActive">
+              <a class="navbar-link" (click)="linkClicked($event)">
+                <figure>
+                  <img src="https://pbs.twimg.com/profile_images/2206149931/image.jpg">
+                </figure>
+                {{ firstName }} {{ lastName }}
+              </a>
+          
+              <div class="navbar-dropdown">
+                <a class="navbar-item" (click)="editBtnClicked($event)">
+                  Edit Profile
+                </a>
+                <a class="navbar-item" (click)="logOut($event)">
+                  Log Out
+                </a>
+              </div>
+            </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="is-clipped">
+      <div class="modal" [class.is-active]="isShowed">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Update Profile</p>
+            <button class="delete" aria-label="close" (click)="modalCloseBtn($event)"></button>
+          </header>
+          <section class="modal-card-body">
+            <div class="field">
+              <label class="label">First Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="e.g David" value="{{ firstName }}">
+              </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Last Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="e.g David" value="{{ lastName }}">
+                </div>
+              </div>
+            
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="email" placeholder="e.g. vhid.abaiz@gmail.com" value="{{ email }}">
+              </div>
+            </div>
+        
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input class="input" type="password" placeholder="Enter password here">
+              </div>
+            </div>
+      
+            <div class="field">
+              <label class="label">Confirm Password</label>
+              <div class="control">
+                <input class="input" type="password" placeholder="Enter password here">
+              </div>
+            </div>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-success">Save changes</button>
+            <button class="button" (click)="modalCloseBtn($event)">Cancel</button>
+          </footer>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div #preLoader>
+  <app-page-loader></app-page-loader>
+</div>
+<div class ="section">
+  <div class = "container">
+    <div class = "subject-component">
+      <div class="notification is-primary">
+          <nav class="breadcrumb">
+              <ul>
+                <li>
+                  <a routerLink = "/" class = "breadcrumb-link">Home</a>
+                </li>
+                <li class="is-active">
+                  <a class = "breadcrumb-link"> Subjects</a> 
+                </li>
+              </ul>
+            </nav>
+            <div class = "columns is-multiline">
+              <div class = "column is-one-third" *ngFor = "let subj of subjects;">
+                <div class="box" [ngClass]="checkIsLock(subj.isEnrolled)" (click)="subjectInfo($event,subj.id, subj.name, subj.isEnrolled)">
+                    <div *ngIf="subj.isEnrolled == false" class = "subject-lock-tag">Unable to access</div>
+                    <article class="media">
+                      <div class="media-left">
+                        <figure> <i class = "fa fa-book title is-1"></i></figure>
+                      </div>
+                      <div class="media-content">
+                        <div class="content">
+                          <p> <strong class = "title is-5"> {{subj.name}} </strong> </p>
+                          <p> <small class = "title is-6"> {{ subj.createdAt | dateFormat: 'MMMM Do YYYY'}}</small> </p>
+                        </div>
+                      </div>
+                    </article>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

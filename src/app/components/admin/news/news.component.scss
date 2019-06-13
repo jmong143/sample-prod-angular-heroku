@@ -1,0 +1,111 @@
+:host ::ng-deep .ck-editor__editable {
+    min-height: 56vh;
+    max-height: 56vh;
+}
+
+.daily {
+    margin: 10px;
+    position: relative;
+    h5 {
+        padding: 0;
+        margin: 0;
+    }
+
+    .view-all {
+        position: absolute;
+        right: 25px;
+        bottom: 18px;
+    }
+}
+
+.news {
+    padding: 20px;
+    margin: 10px;
+    .field-label {
+        flex-grow: 0;
+        .label {
+            font-size: 1.5rem;
+        }
+    }
+
+    .news-button {
+        a {
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+    }
+    .news-preview {
+        .preview-content {
+            background: #fff;
+            box-shadow: 0px 4px 165px black;
+            position: absolute;
+            margin: auto;
+            top: 0px;
+            left: 0px;
+            margin: 20px;
+            padding: 20px 40px;
+            width: 96%;
+            height: 90vh;
+            z-index: 999;
+            overflow: hidden;
+            overflow-y: auto;
+            
+            .news-preview-author {
+                position: relative;
+                text-align: right;
+            }
+        }
+        button {
+            position: absolute;
+            z-index: 1000;
+            bottom: 80px;
+            right: 80px;
+        }
+    }
+    .title-newsfeed {
+        padding-top: 8px;
+    }
+    .news-list-column {
+        height: 62vh;
+        overflow: hidden;
+        overflow-y: auto;
+        table {
+            background-color: #f0f3f4;
+        }
+        .news-list-row {
+            td {
+                position: relative;
+            }
+            // border-left: 5px solid transparent;
+            .news-list {
+                font-weight: bolder;
+                font-size: 15px;
+            }
+        
+            .manage-news-option {
+                position: absolute;
+                right: 10px;
+                bottom: 12px;
+                display: none;
+            }
+        }
+        
+        .is-active {
+            // border-left: 5px solid #ffc000;
+            background: #ffc000;
+            .manage-news-option {
+                display: block;
+            }
+        }
+
+        .news-list-row:hover {
+            // border-left: 5px solid #ffc000;
+            .manage-news-option {
+                display: block;
+            }
+        }
+    }
+
+    
+
+}

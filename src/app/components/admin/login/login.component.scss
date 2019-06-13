@@ -1,0 +1,26 @@
+.loginForm {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    height: 100vh;
+    background-image: url('../../../../assets/img/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card {
+        border-radius: 20px;
+        box-shadow: 0px 4px 9px #a0a0a0;
+        .loginFormContent {
+            padding: 40px 80px;
+            text-align: center;
+    
+            img {
+                height: 70px;
+            }
+    
+            button {
+                width: 100%;
+                background-color: #FFC000;
+            }
+        }
+    }
+}

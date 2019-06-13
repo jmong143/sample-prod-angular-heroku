@@ -1,0 +1,88 @@
+.lesson-info-component{
+    .breadcrumb-link{
+        text-decoration: none;
+    }
+    .notification{
+        .is-danger{
+            background: linear-gradient(to right, rgb(15, 12, 41), rgb(48, 43, 99), rgb(36, 36, 62));
+        }
+        .is-primary {
+            background-color: #296eb5;
+        }
+    }
+    
+    .message{
+        .message-header{
+            text-align: center !important;
+            display: block;
+        }
+    }
+    .notification-topic{
+        background-color: #ffc000;
+        max-height: 16em;
+        height: 13rem;
+    }
+
+    .topic-status{
+        height: 12px;
+        width: 12px;
+        background-color: #003469;
+        border-radius: 50%;
+        display: inline-grid;
+    }
+    
+    .continue-link{
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .topic-status-content{
+        flex-grow: 1;
+        position: absolute; 
+        top: 150px; 
+        left: 23px;
+    }
+    .lesson-stepper{    
+        a{
+            text-decoration: none;
+        }
+        .lesson-name{
+            font-size: 17px;
+        }
+    }
+
+    .lesson-number{
+        text-align: center;
+    }
+
+    .lesson-list{
+        border-style: solid;
+    }
+
+    .lesson-content{
+        background-color: lightblue;
+        height: 60rem;
+        border-style: groove;
+        overflow: auto;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+

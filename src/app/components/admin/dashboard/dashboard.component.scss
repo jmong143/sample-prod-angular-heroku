@@ -1,0 +1,58 @@
+ @import "src/styles.scss";
+
+ html {
+    background-color: $admin-primary-color;
+  }
+
+.wrapper {
+    .columns {
+        .aside {
+            z-index: 1;
+        }
+
+        .main {
+            .breadcrumb-wrapper {
+                margin-bottom: 20px;
+                padding: 10px ;
+                .breadcrumb {
+                    position: relative;
+                    
+                    ul {
+                        float: right;
+                        padding: 0;
+                        margin: 0;
+                        justify-content: right;
+                        // width: 50%;
+                        .is-active {
+                            margin: 0;
+                        }
+                    }
+                    h1 {
+                        float: left;
+                        font-weight: bold;
+                        font-size: 26px;
+                        margin: 0;
+                        padding: 0;
+                        margin-bottom: 10px;
+                        position: absolute;
+                    }
+                    .clear {
+                        clear: both;
+                    }
+                }
+            }
+            
+            background-color: $admin-primary-color;
+            .overview {
+                
+                .content {
+                    padding: 10px 20px;
+
+                    li {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

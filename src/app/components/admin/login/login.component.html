@@ -1,0 +1,48 @@
+<div class="loginForm">
+  <div class="columns is-desktop is-centered">
+      <div class="card">
+        <div class="content loginFormContent">
+          <img src="../../../../assets/img/logo.png" alt="">
+          <hr>
+          <div class="field">
+            <label for="" class="label has-text-left has-text-grey-light">Email</label>
+            <p class="control has-icons-left has-icons-right">
+              <input [(ngModel)]="data.email" class="input is-medium" type="email" placeholder="Email">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <!-- <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span> -->
+            </p>
+          </div>
+          <div class="field">
+            <label for="" class="label has-text-left has-text-grey-light">Password</label>
+            <p class="control has-icons-left">
+              <input [(ngModel)]="data.password" class="input is-medium" type="password" placeholder="Password">
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <label class="checkbox">
+              <input type="checkbox">
+              Remember me
+            </label>
+          </div>
+          <div class="field">
+            <p class="control">
+              <button class="button is-block is-large is-fullwidth" type="submit" (click)="onSubmit()" placeholder="Medium loading input">
+                Login
+              </button>
+            </p>
+           
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div #preLoader>
+  <app-page-loader></app-page-loader>
+</div>

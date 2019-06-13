@@ -1,0 +1,36 @@
+<div class="modal" [class.is-active]="!dismmised">
+  <div class="modal-background" (click)="closeSubjectCodes()"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Subject Codes</p>
+      <button class="delete" aria-label="close" (click)="closeSubjectCodes()"></button>
+    </header>
+    <section class="modal-card-body">
+      <section class="accordions" *ngIf="subjectCodes; else isLoading;">
+        <article class="accordion" [class.is-active]="showSubjects && i == x"
+          *ngFor="let code of subjectCodes; let i = index;">
+          <div class="accordion-header toggle">
+            <p>{{ code.subjectCode }}</p>
+            <span>
+              <button class="button" (click)="copySubjectCode(code.subjectCode)"><i class="fas fa-copy"></i></button>
+              <button class="button" (click)="viewSubjects(i)">View Subjects</button>
+            </span>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-content">
+              <p *ngFor="let subject of code.subjects">
+                {{ subject.name ? subject.name : 'No subject available' }}
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <ng-template #isLoading>
+        Loading... Please wait.
+      </ng-template>
+    </section>
+    <footer class="modal-card-foot">
+
+    </footer>
+  </div>
+</div>

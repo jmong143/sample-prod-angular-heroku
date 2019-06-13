@@ -1,0 +1,20 @@
+.subject-management {
+    margin: 10px;
+    .columns {
+        
+        .subject-list {
+            max-height: 60vh;
+            overflow: auto;
+            
+        }
+
+        .card-header-title {
+            margin-bottom: 0;
+        }
+        .gen-code-btn {
+            position: absolute;
+            top: 4px;
+            right: 15px;
+        }
+    }
+}

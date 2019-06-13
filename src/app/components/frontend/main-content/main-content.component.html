@@ -1,0 +1,61 @@
+<!-- <div class = "main-content-component">
+  <div class="notification is-success" #tipNotif>
+      <span class = "fa fa-lightbulb"></span>
+      <button class="delete" (click)="deleteTipNotif()"> </button>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      
+  </div>
+</div> -->
+
+<div class = "section">
+  <div class = "columns is-12">
+    <div class = "column">
+      <article class="message is-primary">
+        <div class="message-header">
+          <p>SUBJECT OVERVIEW</p>
+          <a class = "is-pulled-right see-more"><small>see more</small></a>
+        </div>
+        <div class="message-body">
+          <div class = "columns is-multiline">
+              <div *ngFor = "let subject of userInfo.subjects.list;" class = "column is-one-third">
+                <!-- <div class = "column is-one-third"> -->
+                <!-- <app-home-recent-activities class = "" activity = '{"id": "{{activity.id}}", "name": "{{activity.name}}", "date": "{{activity.date}}"}'></app-home-recent-activities> -->
+                  <app-home-subject-overview subject = '{"id": "{{subject.subjectId}}", "name": "{{subject.name}}", "progress": "{{subject.progress}}"}'></app-home-subject-overview>
+              </div>
+          </div>
+          
+        </div>
+      </article>
+
+      <article class="message is-primary">
+        <div class="message-header">
+          <p>RECENT ACTIVITIES </p>
+          <a class = "is-pulled-right see-more"><small>see more</small></a>
+        </div>
+        <div class="message-body">
+          <div class = "columns is-multiline">
+            <div *ngFor = "let activity of userInfo.recentActivities;" class = "column is-one-third">
+              <app-home-recent-activities class = "" activity = '{"id": "{{activity.id}}", "name": "{{activity.name}}", "date": "{{activity.date}}"}'></app-home-recent-activities>
+            </div>
+          </div>
+        </div>
+      </article>
+ 
+    </div>
+    <div class = "column is-3">
+      <app-home-news [news]="[userInfo.news]"></app-home-news>
+    </div>
+  </div>
+</div>
+
+
+<div class="daily-tip-box">
+    <div class="daily-tip-hid-box">
+        <div class="daily-tip-success-box">
+            <div class="daily-tip-message" style = "margin: 1rem 1rem 1rem 0rem">
+              <h1 class="alert custom-h1">Daily Tip!</h1> 
+              <p class = "daily-tip-content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+.admin-modal {
+    .modal-card-title {
+        margin-bottom: 0;
+    }
+
+    .modal-card-body {
+        .subject-details-updating {
+            p {
+                font-size: 14px;
+            }
+            .subject-details-option {
+                padding-bottom: 5px;
+                text-align: right;
+            }
+            .subject-details-updating-field {
+                margin-bottom: 1em;
+            }
+        }
+    
+        .subject-details-option-viewing {
+            padding-bottom: 5px;
+            text-align: right;
+        }
+    }
+    
+
+    section {
+        max-height: 50vh;
+        overflow: auto;
+    }
+}

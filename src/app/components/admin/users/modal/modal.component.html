@@ -1,0 +1,32 @@
+<div class="admin-modal">
+  <div class="modal" [class.is-active]="!dismissed && data">
+    <div class="modal-background" (click)="modalCloseBtn()"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">User Details</p>
+        <button class="delete"  (click)="modalCloseBtn()"></button>
+      </header>
+      <section class="modal-card-body">
+        <p><strong>Name: </strong> 
+          {{ data.firstName ? data.firstName : info }}
+          {{ data.lastName ? data.lastName : info }}
+        </p>
+        <p><strong>Email: </strong> {{ data.email ? data.email : info }}</p>
+        <p><strong>Age: </strong> {{ data.age ? data.age : info }}</p>
+        <p><strong>Gender: </strong>{{ data.gender ? data.gender : info }}</p>
+        <p><strong>School: </strong>{{ data.school ? data.school : info }}</p>
+        <p *ngIf="data.subjectCode; else viewSubjectCodes"><strong>Subject Code: </strong>{{ data.subjectCode }}</p>
+        <ng-template #viewSubjectCodes>
+          <button class="button" (click)="getSubjectCodes()">Get Subject Code</button>
+        </ng-template>
+        
+      </section>
+      <footer class="modal-card-foot">
+        <button *ngIf="!data.subjectCode" class="button is-success" (click)="sendSubjectCode(data.email)">Send</button>
+        <input *ngIf="!data.subjectCode" type="text" class="input" placeholder="Enter Subject Code" [(ngModel)]="input.code">
+      </footer>
+    </div>
+  </div>
+</div>
+
+<admin-subject-codes></admin-subject-codes>

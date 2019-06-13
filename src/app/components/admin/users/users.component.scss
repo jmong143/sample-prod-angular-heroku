@@ -1,0 +1,45 @@
+
+input {
+    color: #000;
+    background-color: #f0f3f4;
+}
+
+.user-management {
+    padding: 20px;
+    margin: 10px;
+    .columns {
+        .user-registration {
+            margin-right: 20px;
+        }
+    
+        header {
+            background: #003469;
+            .card-header-title {
+                color: #fff;
+                
+                input {
+                    width: 240px;
+                    position: absolute;
+                    right: 10px;
+                    background: #f0f3f4;
+                }
+            }
+        }
+    
+        .user-list {
+            max-height: 63vh;
+            overflow: auto;
+            padding: 0;
+            height: 63vh;
+            background: #f0f3f4;
+            table {
+                background: #f0f3f4;
+                .user-list-row:hover {
+                    background: #FFC000;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
+

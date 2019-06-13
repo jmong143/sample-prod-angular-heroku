@@ -1,0 +1,73 @@
+
+<div style = "background-image:url('../../../../assets/img/bg.png') !important;">  
+<app-non-nav-bar></app-non-nav-bar>
+
+<div #preLoader>
+  <app-page-loader></app-page-loader>
+</div>
+
+<div class = "login-component">
+  <div class = "columns">
+    <div class = "column"></div>
+    <div class = "column is-two-fifths">
+      <div class = "padding-10"></div>
+        <div class="notification login-panel">
+            <img src = "../../../../assets/img/logo.png" class = "login-logo">
+            <div class = "columns">
+              <div class = "column"></div>
+              <div class = "column is-two-thirds">
+                <br/>
+                <form #userlogin name = "formLogin" (ngSubmit)="loginOnSubmit(userlogin.value)">
+                  <div class="field">
+                    <p class="control">Email
+                      <input class="input is-primary is-rounded" [(ngModel)] = "email" name = "email" type="text" placeholder="Text Input"/>
+                    </p>
+                  </div>
+                  <br/>
+                  <div class="field">
+                    <p class="control">Password
+                      <input class="input is-primary is-rounded" [(ngModel)] = "password" name = "password" type="password" placeholder="Text Input">
+                    </p>
+                  </div>
+
+
+                <br/>
+                <div class="field-body">
+                  <div class="field is-grouped">
+                    <p class="level-left">
+                      <input class="" type="checkbox"> &nbsp; <b>Remember Me</b>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="level-right">
+                      <button type = "submit" class = "button is-primary is-rounded custom-button-primary"> Login </button>
+                    </p>
+                  </div>
+                </div>
+                </form>
+                <hr/>
+                <div class = "columns">
+                  <div class = "column"></div>
+                  <div class = "column is-8">
+                  <p class = "text-center"><b>Don't have an account?</b></p>
+                  <div class = "margin-1"></div>
+                  <button routerLink = "/registration" class = "button is-primary is-rounded is-centered custom-button-secondary"> Register </button>
+                </div>
+                  <div class = "column"></div>
+
+                </div>
+                <hr/>
+                <p class = "text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+
+              </div>
+              <div class = "column"></div>
+            </div>
+
+        </div>
+        <div class = "padding-10"></div>
+    </div>
+    <div class = "column"></div>
+    </div>
+
+</div>
+</div>

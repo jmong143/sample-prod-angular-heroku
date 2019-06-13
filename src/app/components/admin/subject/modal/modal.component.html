@@ -1,0 +1,107 @@
+<div class="admin-modal">
+  <div class="modal" [class.is-active]="!dismissed && subject">
+    <div class="modal-background" (click)="modalCloseBtn()"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">{{ subject.name ? 'Subject Detail' : 'Lesson' }}</p>
+        <button class="delete" (click)="modalCloseBtn()"></button>
+      </header>
+
+
+      <div *ngIf="subject.name; else lessonContent">
+
+        <section class="modal-card-body">
+          <p>Subject Name : {{ subject.name }}</p>
+          <p>Subject Detail : {{ subject.description }}</p>
+          <p>Created at : {{ subject.createdAt | date : "fullDate" }}</p>
+          <p>Topic List : {{ topics.length
+            <=0 ? 'No topic available' : '' }}</p>
+              
+              <table>
+                <thead>
+                  <tr *ngFor="let topic of topics; let i=index">
+                    <td>
+                      <div class="field is-grouped">
+                        <p class="control is-expanded">
+                          <input class="input" type="text" name="description" placeholder="Update topic description" [disabled]="i != x" [(ngModel)]="topic.description">
+                        </p>
+                        <p class="control" *ngIf="i != x">
+                          <a class="button" (click)="editTopic(i)">
+                            <i class="fas fa-edit"></i>
+                          </a>
+                          <a class="button" (click)="viewLessons(topic.id, topic.description)">
+                            <i class="fas fa-eye"></i>
+                          </a>
+                        </p>
+
+                        <p class="control" *ngIf="i == x">
+                          <a class="button" (click)="updateTopic(topic.topicNumber, topic.description, topic.id)">
+                            <i class="fas fa-save"></i>
+                          </a>
+                          <a class="button" (click)="closeEdit()">
+                            <i class="fas fa-window-close"></i>
+                          </a>
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+        </section>
+
+        <footer class="modal-card-foot">
+          <button class="button is-success" (click)="addTopic(subject.id)">Add</button>
+          <input type="text" class="input" placeholder="Enter new topic" name="desc" [(ngModel)]="inputAddTopic.description">
+        </footer>
+      </div>
+
+      <ng-template #lessonContent>
+        <section class="modal-card-body">
+
+          <p class="is-pulled-right">
+            <a class="button" (click)="backToSubjectDetails()">Back</a> <a class="button" (click)="deleteTopic(subject.id)">Delete</a>
+          </p>
+          <h4>Topic: {{topicDesc}}</h4>
+          <div *ngIf="lessons.length > 0; else noLessonAvailable">
+            <table>
+              <tr *ngFor="let lesson of lessons; let i = index">
+                <td *ngIf="lesson.isArchive == false">
+                    <div class="field is-grouped">
+                      <p class="control is-expanded">
+                        <textarea name="" id="" rows="1" [disabled]="i != x" [(ngModel)]="lesson.description" style="width: 100%; resize: none">{{lesson.description}}</textarea>
+                      </p>
+                      <p class="control" *ngIf="i != x">
+                          <a class="button" (click)="editLesson(i)">
+                              <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="button" (click)="deleteLesson(lesson.id)">
+                              <i class="fas fa-trash-alt"></i>
+                            </a>
+                      </p>
+
+                      <p class="control" *ngIf="i == x">
+                        <a class="button" (click)="updateLesson(lesson.id, lesson.description, lesson.lessonNumber)">
+                          <i class="fas fa-save"></i>
+                        </a>
+                        <a class="button" (click)="closeEdit()">
+                          <i class="fas fa-window-close"></i>
+                        </a>
+                      </p>
+                    </div>
+                  
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div *ngIf="isLoading">
+            <p><span *ngIf="isLoading == 'Loading...'"><i class="fas fa-circle-notch fa-spin"></i></span> {{ isLoading }}</p>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" (click)="addLesson()">Add</button>
+          <input type="text" class="input" placeholder="Enter new lesson" name="desc" [(ngModel)]="inputAddLesson.description">
+        </footer>
+      </ng-template>
+    </div>
+  </div>
+</div>

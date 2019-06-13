@@ -1,0 +1,45 @@
+.custom-h1 {
+    font-size: 0.9em;
+    font-weight: 100;
+    letter-spacing: 3px;
+    padding-top: 5px;
+    color: #FCFCFC;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+  }
+  
+  
+  .daily-tip-success-box {
+  width: 20rem;
+  height: 15rem;
+    left: 12%;
+    background: #003469;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px rgba(203, 205, 211, 0.1);
+    perspective: 40px;
+  }
+  
+  
+  .daily-tip-message {
+    width: 100%;
+    text-align: center;
+    height: 40%;
+  }
+  
+  .daily-tip-box {
+    height: 200px;
+    overflow: hidden;
+    position: -webkit-sticky; position: sticky; bottom:0; float: right;
+  }
+  .daily-tip-hid-box {
+    top: 100%;
+    position: relative;
+    transition: all .9s ease-out;
+    height: 100%;
+  }
+
+  .daily-tip-content{
+      color: #FFFF;
+      margin: 1rem 2rem 0rem 2rem;
+      text-align: left;
+  }

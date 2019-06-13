@@ -1,0 +1,99 @@
+<div class="user-management box">
+  <div class="columns">
+    <div class="column">
+        <div class="user-registration">
+            <div class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Register User
+                </p>
+              </header>
+              <div class="card-content">
+                <form #myForm="ngForm" (submit)="onSubmit(); myForm.reset()">
+                  <div class="field">
+                    <label class="label">Full Name</label>
+                    <div class="control">
+                      <input [(ngModel)]="data.firstName" name="firstName" class="input" type="text" placeholder="e.g David">
+                    </div>
+                  </div>
+        
+                  <div class="field">
+                    <label class="label">Last Name</label>
+                    <div class="control">
+                      <input [(ngModel)]="data.lastName" name="lastName" class="input" type="text" placeholder="e.g Abaiz">
+                    </div>
+                  </div>
+                  
+                  <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                      <input [(ngModel)]="data.email" name="email" class="input" type="email" placeholder="e.g. vhid.abaiz@gmail.com">
+                    </div>
+                  </div>
+
+                  <!-- <div class="field">
+                    <label class="label">Subject Code (Optional)</label>
+                    <div class="control">
+                      <input [(ngModel)]="data.subjectCode" name="subjectCode" class="input" type="text" placeholder="Enter Subject Code">
+                    </div>
+                  </div> -->
+                  <div class="notification" [ngClass]="notifType" *ngIf="msg"><i class="fas fa-check-circle"></i> {{msg}}</div>
+                  <input type="submit" class="button" value="Submit">
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-two-thirds">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            User List
+            <input class="input is-rounded search-user" type="text" [(ngModel)]="searchUser" (ngModelChange)="onSearch($event)" placeholder="Search user">
+          </p>
+          
+        </header>
+        
+        <div class="card-content user-list">
+          <table class="table" role="grid">
+            <div *ngIf="isSearching">
+              <p style="padding: 10px 0 0 10px;">
+               <span *ngIf="isSearching == 'Searching...'"><i class="fas fa-circle-notch fa-spin"></i></span> {{ isSearching }}
+              </p>
+            </div>
+            <thead *ngIf="users">
+              <tr>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Email
+                </th>
+                <th>
+                  Code
+                </th>
+                <th></th>
+              </tr>
+              <tr *ngFor="let user of users" class="user-list-row">
+                <td>
+                    {{ user.firstName }} {{ user.lastName }}
+                </td>
+                <td>
+                    {{ user.email }}
+                </td>
+                <td style="width: 150px">
+                    {{ user.subjectCode ? user.subjectCode : 'Not Enrolled' }}
+                </td>
+                <td style="width: 50px">
+                  <button class="button" (click)="userClick(user)"><i class="fas fa-eye"></i></button>
+                </td>
+              </tr>
+            </thead>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <admin-user-modal></admin-user-modal>
+</div>

@@ -1,0 +1,54 @@
+<app-header></app-header>
+<div class ="section">
+  <div class = "container">
+    <div class = "subject-info-component">
+      <div class="notification is-primary">
+          <nav class="breadcrumb">
+              <ul>
+                <li>
+                  <a routerLink = "/" class = "breadcrumb-link">Home</a>
+                </li>
+                <li>
+                  <a class = "breadcrumb-link" routerLink = "/subjects"> Subjects</a> 
+                </li>
+                <li class="is-active">
+                  <a class = "breadcrumb-link"> {{subjectInfo.name}}</a> 
+                </li>
+              </ul>
+            </nav>
+            
+            
+            <article class="message ">
+              <div class="message-header">
+                <h4 class = "title is-4">{{subjectInfo.name}}</h4>
+                <h6 class = "title is-6">{{subjectInfo.description}}</h6>
+                
+              </div>
+              <div class="message-body">
+                  <div class = "columns is-multiline">
+                      <div class = "column is-one-quarter" *ngFor = "let topics of topicInfo;">
+                        <div class="notification notification-topic">
+                          <p> <strong class = "title is-2">{{ topics.topicNumber }}</strong> </p>
+                          <p>
+                            {{ topics.description.length > 40 ? topics.description.substring(0, 40) + '...' : topics.description }}
+                          </p>
+                          <hr/>
+                          <div class = "topic-status-content">
+                            <span class = "topic-status"></span>  <small><b>  <a (click) = "lessonList($event, subjectInfo.id, subjectInfo.name, topics.id, topics.description)" class = "continue-link"> Continue Reading...</a></b></small>
+                            <!-- <button appDebounceClick (debounceClick)="lessonList($event, subjectInfo.id, subjectInfo.name, topics.id, topics.description)" [debounceTime]="700">Debounced Click</button> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </article>
+
+
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

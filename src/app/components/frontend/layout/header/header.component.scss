@@ -1,0 +1,111 @@
+@import '../../../../../styles.scss';
+.navbar-custom-color{
+    background-color: red !important;
+}
+.custom-navbar{
+  font-size: 12px;
+  box-shadow: 0 5px #ffc000;
+  padding-top: 0vh;
+}
+.link-is-active{
+    background-color: #00d2ff;
+}
+
+
+.custom-navbar-logo{
+  margin-bottom: -8px;
+}
+
+.navbar.is-primary {
+  background-color: #003469 !important;
+}
+
+.custom-item{
+  margin-top: 7vh;
+  border-radius: 1vh 1vh 0 0;
+}
+
+.custom-is-active {
+  background-color:  #ffc000
+}
+
+
+.navbar-end a.navbar-item:hover {
+  background-color: #c7a028 !important;
+}
+
+.navbar-brand a.custom-navbar:hover{
+  background-color: #003469 !important;
+}
+
+
+
+.default-navbar-item{
+  color: #373a3c;
+  display: block;
+  line-height: 1.5;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+}
+
+
+.modal-content, .modal-card {
+  // width: 1270px !important;
+}
+
+.message.is-primary .message-header {
+  background-color: $primary !important;
+}
+
+.verticalLine {
+  border-left: thick solid #ff0000;
+}
+
+.message-header {
+  border-radius: 12px 12px 0 0;
+}
+
+.message.is-primary .message-body {
+  background-color: #fff;
+}  
+
+//from modal
+.heading-text{
+  font-size: 14px !important;
+}
+
+.menu-list a.is-active {
+  // background-color: #FFF;
+  color: #FFF;
+  text-decoration: none;
+}
+.menu-list a {
+  text-decoration: none;
+}
+
+.tab-is-active{
+  background-color: #2d68e4;
+}
+.custom-button-secondary{
+  background-color: #ffc000;
+  color: #fff;
+  padding: 20px 31px;
+  line-height: 0.2;
+}
+
+.content-hide{
+  visibility: hidden;
+}
+
+.message {
+  border-radius: 15px;
+}
+
+.is-center{
+  text-align:center;
+}
+
+.add-ons-button{
+  background-color: #ffc000;
+  color: #fff;
+}

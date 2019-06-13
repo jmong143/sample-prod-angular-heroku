@@ -1,0 +1,83 @@
+<div style = "background-image:url('../../../../assets/img/bg.png') !important;">
+
+<app-non-nav-bar></app-non-nav-bar>
+<div #preLoader>
+    <app-page-loader></app-page-loader>
+  </div>
+<div class = "registration-component">
+  <div class = "columns">
+    <div class = "column"></div>
+    <div class = "column is-two-fifths">
+      <div class = "padding-10"></div>
+        <div class="notification registration-panel">
+            <img src = "../../../../assets/img/logo.png" class = "login-logo">
+            <form #userRegistration (ngSubmit)="registerOnSubmit(userRegistration.value)">
+            <div class = "columns">
+              <div class = "column">
+                <div class="field">
+                  <p class="control">Email
+                  <input class="input is-rounded" type="text" placeholder="Text Input" [(ngModel)] = "email" name = "email">
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class = "columns">
+              <div class = "column">
+                <div class="field">
+                  <p class="control">Password
+                    <input class="input is-rounded" type="password" placeholder="Text Input" [(ngModel)] = "password" name = "password">
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class = "columns">
+              <div class = "column">
+                <div class="field">
+                  <p class="control">Retype Password
+                    <input class="input is-rounded" type="password" placeholder="Text Input" [(ngModel)] = "retypePassword" name = "retypePassword">
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class = "columns">
+              <div class = "column">
+                <div class="field">
+                  <p class="control">First Name
+                    <input class="input is-rounded" type="text" placeholder="Text Input" [(ngModel)] = "firstName" name = "firstName">
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class = "columns">
+              <div class = "column">
+                <div class="field">
+                  <p class="control">Last Name
+                    <input class="input is-rounded" type="text" placeholder="Text Input" [(ngModel)] = "lastName" name = "lastName">
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class = "columns">
+              <hr/>
+              <div class = "column">
+                  <small class = "text-center">If you click Submit, you will be registered and you agree to Pinnacle's Terms & Conditions and Privacy Policy</small>
+              </div>
+            </div>
+
+            <div class = "columns">
+                <div class = "column button-align">
+                    <button class = "button is-primary is-rounded is-centered custom-button-secondary" type = "submit"> SUBMIT </button>
+                </div>
+            </div>
+          </form>
+        </div>
+    </div>
+    <div class = "column"></div>
+    </div>
+  </div>
+</div>

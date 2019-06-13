@@ -1,0 +1,85 @@
+<div class="exam-page box">
+    <div class="columns">
+        <div class="column is-two-thirds">
+          <ckeditor [editor]="Editor" data="" (change)="onChange($event)"></ckeditor>
+        </div>
+        <div class="column">
+            <div class="control">
+              <div class="tile is-parent">
+                <article class="tile is-child notification has-background-white">
+                  <div class="content">
+                    <p class="title">Correct Answer</p>
+                    <p class="subtitle">Add choices and mark the correct answer.</p>
+                    <div class="content">
+                      <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label"> <input type="radio" name="rsvp"> A</label>
+                        </div>
+                        <div class="field-body">
+                          <div class="field">
+                            <p class="control">
+                              <input class="input" type="email" placeholder="Enter choice letter A">
+                            </p>
+                          </div>
+                        </div>
+                      </div><div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label"> <input type="radio" name="rsvp"> B</label>
+                        </div>
+                        <div class="field-body">
+                          <div class="field">
+                            <p class="control">
+                              <input class="input" type="email" placeholder="Enter choice letter B">
+                            </p>
+                          </div>
+                        </div>
+                      </div><div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label"> <input type="radio" name="rsvp"> C</label>
+                        </div>
+                        <div class="field-body">
+                          <div class="field">
+                            <p class="control">
+                              <input class="input" type="email" placeholder="Enter choice letter C">
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label"> <input type="radio" name="rsvp"> D</label>
+                        </div>
+                        <div class="field-body">
+                          <div class="field">
+                            <p class="control">
+                              <input class="input" type="email" placeholder="Enter choice letter D">
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <hr> -->
+                      <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label">Difficulty:</label>
+                        </div>
+                        <div class="field-body">
+                          <div class="field">
+                              <div class="select">
+                                  <select class="control">
+                                    <option>Easy</option>
+                                    <option>Hard</option>
+                                  </select>
+                                </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                      <a class="button is-large" (click)="submitCkeditor($event)">Submit</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+        </div>
+      </div>
+</div>

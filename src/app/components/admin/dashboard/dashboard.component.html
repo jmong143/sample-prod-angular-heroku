@@ -1,0 +1,29 @@
+<div class="wrapper">
+        <app-admin-header></app-admin-header>
+  <div class="columns is-gapless">
+    <aside class="column is-2 aside">
+        <app-admin-side-nav></app-admin-side-nav>
+    </aside>
+    <main class="column main">
+        
+        <div class="overview">
+            <div class="content">
+                <div class="breadcrumb-wrapper" *ngIf="title">
+                    <nav class="breadcrumb is-small" aria-label="breadcrumbs">
+                      <h1>{{ title }}</h1>
+                      <ul>
+                        <li><a href="{{baseUrl}}">Home</a></li>
+                        <li><a href="{{baseUrl}}/admin-control">Admin Control</a></li>
+                        <li class="is-active"><a href="{{routeUrl}}" aria-current="page">{{ title }}</a></li>
+                      </ul>
+                      <div class="clear"></div>
+                    </nav>  
+                  </div>
+                <router-outlet (activate)="onActivated()"></router-outlet>
+            </div>
+            <!-- <app-admin-footer></app-admin-footer> -->
+        </div>
+        
+    </main>
+  </div>
+</div>

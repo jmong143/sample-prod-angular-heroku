@@ -1,0 +1,56 @@
+@import "node_modules/bulma/bulma.sass";
+
+.sideBar {
+    // background: linear-gradient(#3a7bd5, #00d2ff);
+    background: #003469;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 17vw;
+    
+    padding-top:95px;
+
+    img {
+        height: 46px;
+        padding-top: 8px;
+    }
+
+    .menu {
+        a {
+            padding: 10px 20px;
+            color: #ddd;
+            
+        }
+
+        i {
+            vertical-align: middle;
+            text-shadow: 3px 2px 8px #535252;
+            margin-bottom: 5px;
+            margin-right: 2px;
+        }
+
+        .menu-label  {
+            padding: 0 20px;
+            color: #ddd;
+            font-weight: bolder;
+        }
+
+        .menu-list {
+            .is-hidden {
+                display: none;
+            }
+        }
+
+        .menu-list a:hover {
+            color: #fff;
+            background-color: #003469;
+        }
+
+        .menu-list a.is-active {
+            background-color: #FFC000;
+            box-shadow: 0px 2px 4px #3a3a3a;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+}
