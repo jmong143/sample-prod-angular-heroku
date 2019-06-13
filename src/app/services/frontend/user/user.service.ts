@@ -6,7 +6,7 @@ import { AuthFrontEnd } from '../../../models/frontend/AuthFrontEnd';
 import { RegistrationFrontEnd } from '../../../models/frontend/RegistrationFrontEnd';
 import * as globalVar from '../../../app-global'; 
 
-const httpOptions = {
+const httpOptions = {  
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'x-client-id': 'Jeyk',
