@@ -33,7 +33,7 @@
     "moment": "^2.24.0",
     "ngx-slick-carousel": "^0.4.4",
     "node-sass": "^4.11.0",
-    "npm": "^6.9.0",
+    "npm": "^6.13.4",
     "path": "^0.12.7",
     "rxjs": "~6.3.3",
     "slick-carousel": "^1.8.1",
